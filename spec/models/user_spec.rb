@@ -1,4 +1,4 @@
-RSpec.describe User, type: :model do
+describe User do
   it 'has a name' do
     user = User.create(name: 'Alice')
 

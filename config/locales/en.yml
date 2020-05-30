@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  referrals:
+    create:
+      parameter_missing: >-
+        Please provide a request body informing the user id for which the
+        referral should be created as in { referral: { user_id: XYZ } }
+      user_not_found: >-
+        There is no user for the given user id

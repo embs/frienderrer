@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe 'POST /referrals' do
   context 'with a proper user id' do
     it 'returns 201 status code' do

@@ -37,3 +37,8 @@ en:
         referral should be created as in { referral: { user_id: XYZ } }
       user_not_found: >-
         There is no user for the given user id
+  users:
+    create:
+      parameter_missing: >-
+        Please provide a request body informing the user name and possibly a
+        referral id as in { user: { name: XYZ }[, referral_id: 1234] }

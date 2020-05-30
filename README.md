@@ -17,6 +17,24 @@ We return 422 with a message informing what's the expected request body.
 We return 404 and a proper error message instead of unprocessable entity so
 whoever is using this endpoint can have a clearer idea of what's going on.
 
+## Users
+
+This is not meant to be an user authentication and / or authorization service but
+one for handling only user referrals instead.  We have an users table for the
+sake of keeping the users' credits.
+
+The users endpoints allows other architectural components to inform the event of
+an user signing up -- with or without an attached referral.
+
+### POST /users
+
+Create a new user.  It'll apply credits policies according to the presence of
+the referral id within the request params.
+
+#### When parameters are missing
+
+We return 422 with a message informing what's the expected request body.
+
 # Dev Docs
 
 ## Dependencies

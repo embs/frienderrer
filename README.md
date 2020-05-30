@@ -8,6 +8,20 @@ Create an user's referral.  It'll return the referral id, which is supposed to
 be used for assembling and providing the user with the URL they must share with
 their friends.
 
+#### Example
+
+Request:
+
+    curl -i -XPOST -H 'Content-Type: application/json' localhost:3000/referrals -d '{
+      "user_id": 1
+    }'
+
+Response:
+
+    HTTP/1.1 201 Created
+
+    {"referral":{"id":2}}
+
 #### When parameters are missing
 
 We return 422 with a message informing what's the expected request body.
@@ -30,6 +44,19 @@ an user signing up -- with or without an attached referral.
 
 Create a new user.  It'll apply credits policies according to the presence of
 the referral id within the request params.
+
+#### Example
+
+Request:
+
+    curl -XPOST -H 'Content-Type: application/json' localhost:3000/users -d '{
+      "user": { "name": "Alice" },
+      "referral_id": 1
+    }'
+
+Response:
+
+    HTTP/1.1 204 No Content
 
 #### When parameters are missing
 
